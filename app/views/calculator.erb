@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="six columns">
+    <form action="/calculator/calculate" method="post">
+      <%= font_select %><br>
+
+      <input type="number" name="font_size" placeholder="Font Size"><br>
+      <input type="number" name="font_width" placeholder="Max width in pixels"><br>
+      <textarea name="text" rows="8" cols="25" placeholder="Text"></textarea><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <% if @lines %>
+    <div class="six columns">
+      Lines of text: <%= @lines %><br>
+      Words which does not fit: <%= @words.join(', ') if @words %>
+    </div>
+  <% end %>
+</div>
